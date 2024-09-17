@@ -7,13 +7,32 @@ class PostScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Text("Post Page"),
-        TextButton(
-            onPressed: () => context.pushNamed(commentPageRoute, extra: 'abc'),
-            child: const Text("Click Here"))
-      ],
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text("Posts"),
+        ),
+        body: ListView.builder(
+            scrollDirection: Axis.vertical,
+            itemCount: 100,
+            itemBuilder: ((context, index) => const PostItem())));
+  }
+}
+
+class PostItem extends StatelessWidget {
+  const PostItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {},
+      child: const Padding(
+        padding: EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [Text('userId'), Text('Title'), Text('SubTitle')],
+        ),
+      ),
     );
   }
 }
