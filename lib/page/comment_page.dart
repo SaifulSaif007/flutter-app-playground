@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
@@ -7,7 +9,7 @@ class CommentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final String extraString = GoRouterState.of(context).extra! as String;
+    final String extraString = GoRouterState.of(context).extra as String;
 
     return const Column(
       children: [

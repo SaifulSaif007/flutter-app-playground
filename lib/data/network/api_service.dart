@@ -1,5 +1,6 @@
-import 'package:dio/dio.dart' show Dio;
+import 'package:dio/dio.dart';
 import 'package:placeholder/data/model/post.dart';
+import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
 part 'api_service.g.dart';
