@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:placeholder/data/model/comment.dart';
 import 'package:placeholder/data/model/post.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
@@ -11,4 +12,7 @@ abstract class ApiService {
 
   @GET("/posts")
   Future<List<Post>> getPosts();
+  
+  @GET("/posts/{id}/comments")
+  Future<List<Comment>> getComments(@Path('id') String id);
 }
