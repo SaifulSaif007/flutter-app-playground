@@ -6,4 +6,8 @@ sealed class CommentEvent extends Equatable {
   List<Object?> get props => [];
 }
 
-class LoadComments extends CommentEvent {}
+class LoadComments extends CommentEvent {
+  final String postId;
+
+  LoadComments(this.postId);
+}
